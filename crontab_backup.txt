@@ -1,0 +1,11 @@
+0 * * * * /home/pi/Pump/time_log.py >> ~/Logs/time.log 2>&1
+
+0 0 28 */2 * rm ~/time.log
+
+0 0 28 */2 * rm ~/pump.log
+
+0 13 */3 * * /home/pi/Pump/pump.py >> ~/Logs/pump.log 2>&1
+
+30 */4 * * * /home/pi/Pump/temp.py >> ~/Logs/humid.log 2>&1
+
+0 0 27 */2 * /home/pi/Pump/plotter.py
